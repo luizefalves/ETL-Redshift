@@ -2,8 +2,8 @@ import configparser
 import psycopg2
 from sql_queries import copy_table_queries, insert_table_queries
 
-# etl.py load data from S3 to staging tables on Redshift.
-# and load data from staging tables to analytics tables on Redshift.
+# This file load data from S3 to tables on Redshift.
+# it also loads data from staging tables to analytics tables on Redshift.
 
 def load_staging_tables(cur, conn):
     for query in copy_table_queries:  # copy_table_queries = [staging_events_copy, staging_songs_copy]
